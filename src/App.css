@@ -263,11 +263,10 @@ a {
   letter-spacing: 0.06em;
 }
 
-/* INTENTIONAL DEFECT #3: low contrast description text (#bdbdbd on #ffffff) */
 .book-desc {
   margin: 4px 0 12px;
   font-size: 0.92rem;
-  color: #bdbdbd;
+  color: #595959;
   background: #ffffff;
 }
 
@@ -322,13 +321,14 @@ a {
   outline-offset: 1px;
 }
 
-/* INTENTIONAL DEFECT #4: clickable div styled as a button, no role/tabIndex/keyboard */
 .newsletter-submit {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 13px 26px;
   border-radius: 10px;
+  border: none;
+  font-family: inherit;
   background: var(--accent);
   color: #fff;
   font-weight: 600;
