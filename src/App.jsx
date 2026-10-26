@@ -78,7 +78,7 @@ function App() {
           </nav>
 
           <div className="header-actions">
-            <button className="icon-button">
+            <button className="icon-button" aria-label="View shopping cart">
               <CartIcon />
             </button>
           </div>
@@ -88,9 +88,9 @@ function App() {
       <main id="top">
         <section className="hero">
           <div className="container hero-inner">
-            <h3 className="hero-title">
+            <h1 className="hero-title">
               Stories worth slowing down for
-            </h3>
+            </h1>
             <p className="hero-subtitle">
               A hand-picked independent bookstore. Free shipping on orders over
               $35, and a real bookseller reply on every order.
@@ -114,7 +114,7 @@ function App() {
               {books.map((book) => (
                 <article className="book-card" key={book.id}>
                   <div className="book-cover">
-                    <img src={book.cover} />
+                    <img src={book.cover} alt={book.title} />
                   </div>
                   <div className="book-info">
                     <h3 className="book-title">{book.title}</h3>
