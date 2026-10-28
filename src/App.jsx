@@ -78,7 +78,7 @@ function App() {
           </nav>
 
           <div className="header-actions">
-            <button className="icon-button">
+            <button className="icon-button" aria-label="View shopping cart">
               <CartIcon />
             </button>
           </div>
@@ -86,11 +86,12 @@ function App() {
       </header>
 
       <main id="top">
+        <h1>Welcome to AccessPilot Store</h1>
         <section className="hero">
           <div className="container hero-inner">
-            <h3 className="hero-title">
+            <h2 className="hero-title">
               Stories worth slowing down for
-            </h3>
+            </h2>
             <p className="hero-subtitle">
               A hand-picked independent bookstore. Free shipping on orders over
               $35, and a real bookseller reply on every order.
@@ -114,7 +115,7 @@ function App() {
               {books.map((book) => (
                 <article className="book-card" key={book.id}>
                   <div className="book-cover">
-                    <img src={book.cover} />
+                    <img src={book.cover} alt={`Cover art for ${book.title}`} />
                   </div>
                   <div className="book-info">
                     <h3 className="book-title">{book.title}</h3>
@@ -145,12 +146,13 @@ function App() {
                 type="email"
                 name="email"
                 placeholder="you@example.com"
+                aria-label="Email address"
                 value={email}
                 onChange={(event) => setEmail(event.target.value)}
               />
-              <div className="newsletter-submit" onClick={handleSubscribe}>
+              <button type="button" className="newsletter-submit" onClick={handleSubscribe}>
                 Subscribe
-              </div>
+              </button>
             </div>
 
             {subscribed && (
