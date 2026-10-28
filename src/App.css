@@ -13,6 +13,17 @@
   --max: 1100px;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -263,12 +274,10 @@ a {
   letter-spacing: 0.06em;
 }
 
-/* INTENTIONAL DEFECT #3: low contrast description text (#bdbdbd on #ffffff) */
 .book-desc {
   margin: 4px 0 12px;
   font-size: 0.92rem;
-  color: #bdbdbd;
-  background: #ffffff;
+  color: #666;
 }
 
 .book-footer {
@@ -322,7 +331,6 @@ a {
   outline-offset: 1px;
 }
 
-/* INTENTIONAL DEFECT #4: clickable div styled as a button, no role/tabIndex/keyboard */
 .newsletter-submit {
   display: inline-flex;
   align-items: center;
@@ -335,6 +343,7 @@ a {
   font-size: 0.98rem;
   cursor: pointer;
   user-select: none;
+  border: none;
 }
 
 .newsletter-submit:hover {
