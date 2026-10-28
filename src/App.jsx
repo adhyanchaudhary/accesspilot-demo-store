@@ -42,6 +42,7 @@ function CartIcon() {
       strokeLinecap="round"
       strokeLinejoin="round"
       focusable="false"
+      aria-hidden="true"
     >
       <circle cx="9" cy="21" r="1" />
       <circle cx="20" cy="21" r="1" />
@@ -78,7 +79,7 @@ function App() {
           </nav>
 
           <div className="header-actions">
-            <button className="icon-button">
+            <button className="icon-button" aria-label="Shopping Cart">
               <CartIcon />
             </button>
           </div>
@@ -88,9 +89,7 @@ function App() {
       <main id="top">
         <section className="hero">
           <div className="container hero-inner">
-            <h3 className="hero-title">
-              Stories worth slowing down for
-            </h3>
+            <h1>Stories worth slowing down for</h1>
             <p className="hero-subtitle">
               A hand-picked independent bookstore. Free shipping on orders over
               $35, and a real bookseller reply on every order.
@@ -114,7 +113,7 @@ function App() {
               {books.map((book) => (
                 <article className="book-card" key={book.id}>
                   <div className="book-cover">
-                    <img src={book.cover} />
+                    <img src={book.cover} alt={`Cover of ${book.title}`} />
                   </div>
                   <div className="book-info">
                     <h3 className="book-title">{book.title}</h3>
@@ -140,7 +139,9 @@ function App() {
             </p>
 
             <div className="newsletter-form">
+              <label htmlFor="email-input" className="sr-only">Email Address</label>
               <input
+                id="email-input"
                 className="newsletter-input"
                 type="email"
                 name="email"
@@ -148,9 +149,9 @@ function App() {
                 value={email}
                 onChange={(event) => setEmail(event.target.value)}
               />
-              <div className="newsletter-submit" onClick={handleSubscribe}>
+              <button className="newsletter-submit" onClick={handleSubscribe}>
                 Subscribe
-              </div>
+              </button>
             </div>
 
             {subscribed && (
